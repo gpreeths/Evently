@@ -18,9 +18,6 @@ const signUp = async (req, res) => {
             return res.status(400).json({ message: 'Please provide an email' })
         }
 
-        if (password !== reTypePassword) {
-            return res.status(400).json({ message: 'Passwords do not match' });
-        }
 
         const existingUser = await User.findOne({ email })
         if (existingUser) {

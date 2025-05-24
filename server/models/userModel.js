@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
 
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event', required: true }],
     bio: { type: String },
-    role:{default:'notAdmin'}
+    role:{type:String, default:'notAdmin'}
 
 
 
