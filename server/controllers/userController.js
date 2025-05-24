@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 
 const signUp = async (req, res) => {
     try {
-        const { name, email, password, reTypePassword, bio } = req.body
+        const { name, email, password, reTypePassword, role } = req.body
 
         if (!name) {
             return res.status(400).json({ message: 'Please provide the username' })
@@ -28,7 +28,7 @@ const signUp = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10)
 
         const newUser = new User({
-            name, email, password: hashedPassword, bio
+            name, email, password: hashedPassword, role
         })
 
         await newUser.save()

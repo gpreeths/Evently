@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-function SignUp() {
+function SignUp({selectedRole}) {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
@@ -22,7 +22,7 @@ function SignUp() {
         setLoading(false)
         return
       }
-      const res = await axios.post("http://localhost:2000/user/signup", { email, name, password, reTypePassword })
+      const res = await axios.post("http://localhost:2000/user/signup", { email, name, password, reTypePassword,role:selectedRole })
 
       console.log("SignUp Successfull!! Redirecting to Login page", res.data);
 
