@@ -127,7 +127,7 @@ setEvents([...tmEvents]);
                 <Popup>{userLocationGranted ? "Your Current Location" : "Searched Location"}</Popup>
 
               </Marker>
-              {events.map(event=>(
+              {events.map(event=>( 
                 <Marker key={event.id} position={[event.lat,event.lon]}>
               <Popup>{event.name}</Popup>
               </Marker>

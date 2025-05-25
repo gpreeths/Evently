@@ -1,4 +1,4 @@
-const jwt=require('jsonwebtoken')
+import jwt from'jsonwebtoken'
 
 const userAuth=(req,res,next)=>{
 
@@ -35,4 +35,4 @@ const verifyToken=async (req,res)=>{
 
 }
 
-module.exports = {userAuth,verifyToken}
+export {userAuth,verifyToken}

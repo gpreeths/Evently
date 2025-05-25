@@ -1,7 +1,8 @@
-const express=require('express')
+import express from 'express'
+import * as userController from '../controllers/userController.js'
+import * as userAuth from '../middlewares/userAuth.js'
+
 const UserRouter=express.Router()
-const userController=require('../controllers/userController')
-const userAuth=require('../middlewares/userAuth')
 
 
 UserRouter.post('/signup',userController.signUp)
@@ -22,4 +23,4 @@ UserRouter.get('/verifyToken',userAuth.verifyToken)
 
 // UserRouter.get('/events/status',userAuth,userController.pendingApproval)
 
-module.exports=UserRouter
+export default UserRouter

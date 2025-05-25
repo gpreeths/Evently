@@ -1,10 +1,11 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const express = require('express');
+import dotenv from 'dotenv'
+import mongoose from 'mongoose';
+import express from 'express'
+dotenv.config()
 const app = express();
 
+import cors from 'cors'
 
-const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
@@ -24,7 +25,10 @@ app.listen(PORT, () => {
 });
 
 // ---------//
-const userRouter=require('./routes/userRoute')
+import userRouter from './routes/userRoute.js'
 app.use('/user',userRouter)
+
+import eventRouter from './routes/eventRoute.js'
+app.use('/event',eventRouter)
 
 
