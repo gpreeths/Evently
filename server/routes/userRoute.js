@@ -6,6 +6,7 @@ const userAuth=require('../middlewares/userAuth')
 
 UserRouter.post('/signup',userController.signUp)
 UserRouter.post('/login',userController.login)
+UserRouter.get('/verifyToken',userAuth.verifyToken)
 // UserRouter.get('/users/:id',userAuth,userController.getUser)
 // UserRouter.delete('/users/:id',userAuth,userController.deleteAccount)
 

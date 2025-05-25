@@ -23,6 +23,7 @@ function Login() {
                 { email, password }
             )
             alert("Login Sucessful")
+            localStorage.setItem('token',res.data.token)
             navigate('/')
 
         } catch (error) {

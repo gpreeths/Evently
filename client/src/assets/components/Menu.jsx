@@ -1,7 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function HomeMenu() {
+  const navigate=useNavigate()
+
+  const handleCLick=async (e)=>{
+    e.preventDefault()
+
+    const token=localStorage.getItem('token')
+    try {
+      const res=await axios.get('http://localhost:2000/user/verifyToken',
+        {headers:{Authorization:`Bearer ${token}` }}
+      )
+      if(res.data.verified){
+        navigate('/user/home')
+      }
+      else{
+        navigate('/signup')
+      }
+
+    } catch (error) {
+      alert(' Before we begin , please login or signup first')
+      navigate('/presignup')
+      
+    }
+  }
+
   return (
     <div className='container1'>
         <div className='evently'>
@@ -9,7 +35,7 @@ function HomeMenu() {
         </div>
             <ul className='ul1'>
                 <li><a href="/">Discover</a></li>
-                <li><a href="/Create">Create</a></li>
+               <button onClick={handleCLick}>Create</button>
                 <li><a href="#footer">About</a></li>
                 <li><a href="/">Contact Us</a></li>
             </ul>
