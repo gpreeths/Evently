@@ -35,9 +35,9 @@ function HomeMenu() {
         </div>
             <ul className='ul1'>
                 <li><a href="/">Discover</a></li>
-               <button onClick={handleCLick}>Create</button>
                 <li><a href="#footer">About</a></li>
                 <li><a href="/">Contact Us</a></li>
+            <button onClick={handleCLick}>Create</button>
             </ul>
         
     </div>
@@ -52,7 +52,7 @@ function PreSignupMenu() {
             <h1>Evently</h1>
         </div>
             <ul className='ul1'>
-                <li><a href="/">Login</a></li>
+                <li><a href="/login">Login</a></li>
                 <li><a href="/">Contact</a> us</li>
             </ul>
         
@@ -67,7 +67,7 @@ function MapMenu() {
             <h1>Evently</h1>
         </div>
             <ul className='ul1'>
-                <li><a href="/">Home</a></li>
+                <li><a href='/user/home'>Home</a></li>
                 <li><a href="/">Contact us</a> </li>
                 <Link to={'/'}>Logout</Link>
             </ul>
@@ -76,5 +76,21 @@ function MapMenu() {
   )
 }
 
+function UerHomeMenu() {
+  return (
+    <div className='container1'>
+        <div className='evently'>
+            <h1>Evently</h1>
+        </div>
+            <ul className='ul1'>
+                <li><a href="/">Contact us</a> </li>
+                <li><a href="/">Notifications</a></li>
+                <Link to={'/'}>Logout</Link>
+            </ul>
+        
+    </div>
+  )
+}
 
-export {HomeMenu,PreSignupMenu,MapMenu}
+
+export {HomeMenu,PreSignupMenu,MapMenu,UerHomeMenu}

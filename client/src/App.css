@@ -21,7 +21,10 @@ a:hover{
 /* homepage */
 
 .mainpic{
-  border-radius: 20px;
+  margin: 2%;
+  border-radius: 10px;
+  width: 800px;
+  max-height: 400px;
 }
 .main{
   position: relative;
@@ -35,7 +38,7 @@ a:hover{
 }
 .overlay-content input{
   border-radius: 10px;
-  width: 90%;
+  width: 100%;
   height: 40px;
   background-color: black;
 }
@@ -47,14 +50,14 @@ a:hover{
   position: absolute;
   margin: 5px;
   border-radius: 10px;
-  width: 25%;
+  width: 20%;
   color: aliceblue;
   cursor: pointer;
   height: 35px;
-  background-color: rgb(8, 97, 185);
+  background-color:  #0a5fe8;
 }
 .overlay-button button:hover{
-  background-color: rgb(4, 45, 86);
+  background-color:  #4185f2;
 }
 
 /* Homemenu */
@@ -73,4 +76,103 @@ a:hover{
   justify-content: space-between;
   align-items: center;
   padding: 0 5% 0 5%;
+
+}
+.container1 button{
+  margin-top: -5px;
+  background-color: #0a5fe8;
+  color: aliceblue;
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+/* Event section */
+.eventssection {
+  padding: 0 2% 0 2%;
+}
+
+/* Card Layout */
+.event_container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.event_container::-webkit-scrollbar {
+  display: none;
+}
+
+.eventcards {
+  width: 250px;
+  height: 250px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+.eventcards:hover {
+  transform: scale(1.05);
+  filter: contrast(1.09);
+}
+
+.eventcards img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5PX;
+}
+
+.eventcards h6,
+.eventcards h4 {
+  margin: 5px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .eventcards {
+    width: 200px;
+    height: 220px;
+  }
+
+  .overlay-button button {
+    width: 40%;
+  }
+}
+/* user home */
+.userHomeContainer{
+  display: flex;
+  justify-content:first baseline;
+  gap: 20%;
+  padding: 0 2% 0 2%;
+}
+
+/* UserHomeSidebar */
+.userHomeSidebar{
+  display: flex;
+  height: auto;
+  background-color: #393535;
+  border-radius: 20px;
+}
+.userHomeSidebar ul{
+padding: 5%;
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 30vh;
 }

@@ -24,7 +24,7 @@ function Login() {
             )
             alert("Login Sucessful")
             localStorage.setItem('token',res.data.token)
-            navigate('/')
+            navigate('/user/home')
 
         } catch (error) {
             const errormessage = error.response?.data?.message || 'Something went wrong'

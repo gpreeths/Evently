@@ -6,7 +6,7 @@ const fetchEventSection= async (req,res)=>{
     try {
         
         const eventlyRes=await Event.find()
-        const tmRes=await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${process.env.TICKETMASTER_API_KEY}`)
+        const tmRes=await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${process.env.TICKETMASTER_API_KEY}&sort=name,asc&size=12`)
         console.log(tmRes.data);
         
         if (!tmRes.data._embedded?.events) {
@@ -16,7 +16,7 @@ const fetchEventSection= async (req,res)=>{
             {
             id:`tm-${e.id}`,
             name:e.name,
-            image:e.images?.[0]?.url,
+            image:e.images?.[1]?.url,
             date:e.dates?.start.dateTime
         }
         ))

@@ -2,15 +2,15 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import SignUp from './assets/pages/SignUp'
 import Login from './assets/pages/Login'
-import Home from './assets/pages/Home'
 import PreSignup from './assets/pages/PreSignup'
 import UserHome from './assets/pages/UserHome'
 import Map from './assets/pages/Map'
+import Landing from './assets/pages/Landing.jsx'
 function App() {
   return (
    <>
    <Routes>
-     <Route path='/' element={<Home/>}/>
+     <Route path='/' element={<Landing/>}/>
     <Route path='/signup' element={<SignUp/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/presignup' element={<PreSignup/>}/>
